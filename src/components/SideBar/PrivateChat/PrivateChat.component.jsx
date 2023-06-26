@@ -22,7 +22,7 @@ const PrivateChat = (props) => {
         if (props.user !== null) {
             onChildAdded(usersRef, (snapshot) => {
                 setUsersState((currentState) => {
-                    let updatedState = [...currentState];
+                    let updatedState = currentState.filter(user => user.displayName !== snapshot.val().displayName);
 
                     let user = snapshot.val();
                     user.name = user.displayName;

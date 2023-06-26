@@ -22,7 +22,7 @@ const Channels = (props) => {
     useEffect(() => {
         onChildAdded(channelsRef, (snapshot) => {
             setChannelsState((currentState) => {
-                let updatedState = [...currentState];
+                let updatedState = currentState.filter(channels => channels.id !== snapshot.val().id);
                 updatedState.push(snapshot.val());
                 return updatedState;
             })

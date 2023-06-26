@@ -64,10 +64,12 @@ const Index = connect(mapStateToProps, mapDispatchToProps)(Main);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Index />
-    </BrowserRouter>
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Index />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
 
